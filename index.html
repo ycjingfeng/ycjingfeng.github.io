@@ -1,132 +1,103 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<title>JF studio</title>
-	<style>
-		div{
-			margin:0 auto;
-			padding: 0px;
-			width: 1000px;
-			height: 50px;
-			text-align: center;
-			line-height: 50px;
-			background-color: #F3EECD;		
-		}
-		
-		aside{
-			float: left;
-			width: 100px;
-			margin: 5px;
-			background-color: #dddddd;
-		}
-		section{
-			float: left;
-			width: 880px;
-			margin: 5px;
-			background-color: #eeeeee;
-		}
-		article{
-			margin: 0 auto;
-			width: 1000px;
-			
-			border: 1px solid #3D3D3D;
-			background-color: #2A2929;
-			
-		}
-		footer{
-			margin-top: 100px;
-			text-align: center;
-			color: cadetblue;
-			clear: left;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>JF Studio 【课堂随笔】</title>
+    <style>
+
+    </style>
 </head>
-
 <body>
-	<header>let go learn GIT!</header>
-	<div>welcome to jingfeng stuido</div>
-	<article>
-		<aside><nav>2019年2月25日</nav></aside>
-		<section>
-		  <p> HTML5新元素 </p>
-		  <p>1、header：页面或页面中某一区域的页眉</p>
-			<p>2、nav</p>
-			<p>3、article</p>
-			<p>4、section</p>
-			<p>5、aside</p>
-			<p>6、footer</p>
-		</section>
-	</article>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+                    <span class="sr-only">view</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/jf.png" alt="JFstudio" style="width: 45px">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="nav navbar-nav" id="mytab">
+                    <li role="presentation" ><a href="#">首页</a></li>
+                    <li role="presentation"><a href="#">PHP</a></li>
+                    <li role="presentation"><a href="#">JS</a></li>
+                    <li role="presentation"><a href="#">H5</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-	
-	<footer>copy 2019</footer>
 
-	<hr>
-		<div class="twoDIV">
-			<h3>CSS3:nth-child()伪类选择器，奇偶数行自定义样式first-child </h3>
-			
-			
-			1、语法：<br/>			
-			:nth-child(an+b)<br/>
-			为什么选择她，因为我认为，这个选择器是最多学问的一个了。很可惜，据我所测，目前能较好地支持她的只有Opera9+和Safari3+。<br/>
-			
-			描述：<br/>
-			
-			伪类:nth-child()的参数是an+b，如果按照w3.org上的描述，写成中文，很可能会让人头晕，再加上笔者的文笔水平有限，所以我决定避开an+b的说法，把它拆分成5种写法共5部分来说明。<br/>
-			第一种：简单数字序号写法<br/>
-			:nth-child(number)<br/>
-			
-			直接匹配第number个元素。参数number必须为大于0的整数。<br/>
-			
-			例子：<br/>
-			
-			li:nth-child(3){background:orange;}<br/>
-			第二种：倍数写法<br/>
-			:nth-child(an)<br/>
-			
-			匹配所有倍数为a的元素。其中参数an中的字母n不可缺省，它是倍数写法的标志，如3n、5n。<br/>
-			
-			例子：<br/>
-			
-			li:nth-child(3n){background:orange;}<br/>
-			
-			第三种：倍数分组匹配<br/>
-			:nth-child(an+b) 与 :nth-child(an-b)<br/>
-			
-			先对元素进行分组，每组有a个，b为组内成员的序号，其中字母n和加号+不可缺省，位置不可调换，这是该写法的标志，其中a,b均为正整数或0。如3n+1、5n+1。但加号可以变为负号，此时匹配组内的第a-b个。（其实an前面也可以是负号，但留给下一部分讲。）<br/>
-			
-			例子：<br/>
-			
-			li:nth-child(3n+1){background:orange;}<br/>
-			
-			li:nth-child(3n+5){background:orange;}<br/>
-			
-			li:nth-child(5n-1){background:orange;}<br/>
-			
-			li:nth-child(3n±0){background:orange;}<br/>
-			
-			li:nth-child(±0n+3){background:orange;}<br/>
-			
-			第四种：反向倍数分组匹配<br/>
-			:nth-child(-an+b)<br/>
-			
-			此处一负一正，均不可缺省，否则无意义。这时与:nth-child(an+1)相似，都是匹配第1个，但不同的是它是倒着算的，从第b个开始往回算，所以它所匹配的最多也不会超过b个。<br/>
-			
-			例子：<br/>
-			
-			li:nth-child(-3n+8){background:orange;}<br/>
-			
-			li:nth-child(-1n+8){background:orange;}<br/>
-			
-			第五种：奇偶匹配<br/>
-			:nth-child(odd) 与 :nth-child(even)<br/>
-			
-			分别匹配序号为奇数与偶数的元素。奇数(odd)与(2n+1)结果一样；偶数(even)与(2n+0)及(2n)结果一样。<br/>
-			
-			作者观点：表格奇偶数行定义样式就可以写成<br/>
-			.table > tr:nth-child(even) > td {background-color: #ccc;}  （偶数行）<br/>
-			.table > tr:nth-child(odd) > td {background-color: #ccc;}  （奇数行<br/>
-		</div>
+    <section>
+        <div class="jumbotron">
+            <div class="container">
+            <h1>亲爱的孩子们，你们好！</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2019年3月份新学期伊始，新的学期新的课程，本学期教授孩子们HTML5的知识。随着课堂的需要把之前教授过的内容整理一下，方便孩子们阅读，查阅。</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">更多内容</a></p>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-4">
+                <div class="thumbnail">
+                    <img src="images/hua.jpg" alt="JFStudio">
+                    <div class="caption">
+                        <h3>PHP课程</h3>
+                        <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。</p>
+                        <p><a href="#" class="btn btn-primary" role="button">复习</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-4">
+                <div class="thumbnail">
+                    <img src="images/hua.jpg" alt="JFStudio">
+                    <div class="caption">
+                        <h3>JavaScript课程</h3>
+                        <p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+                        <p><a href="#" class="btn btn-primary" role="button">复习</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-4">
+                    <div class="thumbnail">
+                        <img src="images/hua.jpg" alt="JFStudio">
+                        <div class="caption">
+                            <h3>Html5</h3>
+                            <p>万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言（HTML）的第五次重大修改.HTML5的设计目的是为了在移动设备上支持多媒体。</p>
+                            <p><a href="#" class="btn btn-primary" role="button">复习</a></p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="container">
+        <address>
+            <strong>JingFeng，teacher</strong><br>
+            中国-河南<br>
+            新乡职业技术学院<br>
+            <abbr title="Phone">P:</abbr> (0373)
+        </address>
+
+        <address>
+            <strong>Full Name</strong><br>
+            <a href="mailto:#">ycjingfeng@163.com</a>
+        </address>
+    </div>
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $("#mytab a").click(function(e){
+            $(this).tab("show");
+        })
+    </script>
 </body>
 </html>
